@@ -8,7 +8,8 @@ import bson
 from bson.objectid import ObjectId
 from swagger_server.models import Student
 
-client = MongoClient('mongodb://devops-lab-2_mongodb_1:27017/')
+client = MongoClient('mongodb://127.0.0.1:27017/')
+
 db = client.swagger_db
 student_db = db.students
 
