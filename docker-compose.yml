@@ -1,11 +1,12 @@
-version: "3.3"
+version: "3.8"
 services:
   swagger:
     container_name: swagger-spring-example
     build: .
     ports:
         - 8080:8080
-    depends_on: mongodb
+    depends_on: 
+        - mongodb
 
   mongodb:
     restart: always
