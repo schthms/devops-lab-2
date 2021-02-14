@@ -30,8 +30,8 @@ script:
 - node_modules/.bin/newman run tests/postman_collection.json -e tests/postman_environment.json
 after_success:
 - docker login -u $DOCKER_USER -p $DOCKER_PASS
-- docker tag permutation/uva-devops-lab-2/ permutation/uva-devops-lab-2
-- docker push permutation/uva-devops-lab-2
+- docker tag uva-devops-lab-2/swagger_server uva-devops-lab-2/swagger_server
+- docker push uva-devops-lab-2/swagger_server
 env:
   global:
   - secure: UhKOM7twGPfN0kdKy8f5rYwAWTI2onWdWexSy6wwcaGw0IvwcY8vJKYCAxioW6qhGvmzlhIeDQf6f19/JLxKcT8PB1lqX6iSgqrqZ2xdz0tRp0sF+2TS2Fnk66ENjA9G1YjbJLdHgMfqmnUgdMFluk1+5m5CTBi7VJQXhkcRzwy1xH9m8sCHVwqEtOfQJJ9yj6bDBYguuIO4nz6Xwzwo1Yonsiq3aNAEZZjTecOnlmIT/3K+3QMMY4UfpJ9x4Qo1epjajKGSwtGYKSc3jifh382kloleN5sCd5/1M7qtf64DGh5lZeSRhkpTbfLjfBtYHeve4wOolW+nhsW37VJ0A4E2mB30vHgMzSfZjFmLkj4GxirSYoc2pVmvHfFKEgnXepEmQ3uPhhVIx1yWC/O9VLEC80fza4bpZmPjs/MF0cjgW76WhZ/uIYaU7QQpGm93g+SYWn1oHpg+DJEjLaX78viBLzLMIE/S+yYTxeC7gZ6hVrNc4Hvjz6LZdRp1wEhwFDgzD8faUMV/uk0tFbImcfJFFg/MxjQSExiT/XSX3WWfW5txLRVIcdEVE8mRFw7DpQH86qlI1kgi2m2Ax6R2eze7JozmOZiqzQuf3OhAbJEKCUoI9aprzaZUP680SEjIoNxLBWQrubRp5r6dASyZIvTk8QdJIaugGlIp02bd/rc=
