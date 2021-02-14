@@ -30,7 +30,7 @@ script:
 - node_modules/.bin/newman run tests/postman_collection.json -e tests/postman_environment.json
 after_success:
 - docker login -u $DOCKER_USER -p $DOCKER_PASS
-- docker tag uva-devops-lab-2/swagger_server uva-devops-lab-2/swagger_server
+- docker tag swagger-spring-example:1.0.0 uva-devops-lab-2/swagger_server
 - docker push uva-devops-lab-2/swagger_server
 env:
   global:
