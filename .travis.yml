@@ -24,7 +24,7 @@ script:
 - count=0 && until $(curl --output /dev/null --silent --head --fail http://localhost:8080);
   do printf '.' && sleep 3 && count=$((count+1)) && if [ $count -gt 5 ]; then break;
   fi; done
-- python -m unittest discover
+#- python -m unittest discover
 - docker logs swagger-spring-example
 - node_modules/.bin/newman run tests/postman_collection.json -e tests/postman_environment.json
 after_success:
