@@ -12,6 +12,7 @@ services:
     image: mongo:latest
     ports:
       - 27017:27017
+    network_mode: host
     volumes:
       - mongodb_data:/data/db
 
