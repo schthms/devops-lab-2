@@ -5,16 +5,13 @@ services:
     build: .
     ports:
         - 8080:8080
-    extra_hosts:
-      - "host.docker.internal:host-gateway"
     depends_on: mongodb
 
   mongodb:
+    container_name: mongodb
     image: mongo:latest
     ports:
       - 27017:27017
-    extra_hosts:
-      - "host.docker.internal:host-gateway"
     volumes:
       - mongodb_data:/data/db
 
