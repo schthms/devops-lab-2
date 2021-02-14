@@ -19,13 +19,13 @@ before_script:
 - npm --version
 - node_modules/.bin/newman --version
 script:
-- python -m unittest discover
 - docker-compose up --build -d
 - docker ps
 - count=0 && until $(curl --output /dev/null --silent --head --fail http://localhost:8080);
   do printf '.' && sleep 3 && count=$((count+1)) && if [ $count -gt 5 ]; then break;
   fi; done
-- docker logs example_api
+- python -m unittest discover
+- docker logs swagger-spring-example
 - node_modules/.bin/newman run tests/postman_collection.json -e tests/postman_environment.json
 after_success:
 - docker login -u $DOCKER_USER -p $DOCKER_PASS
