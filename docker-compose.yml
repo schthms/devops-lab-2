@@ -8,6 +8,7 @@ services:
     depends_on: mongodb
 
   mongodb:
+    restart: always
     container_name: mongodb
     image: mongo:latest
     ports:
